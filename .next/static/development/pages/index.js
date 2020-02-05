@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify2\\components\\BaseContainer.js";
+var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\BaseContainer.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -50,7 +50,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify2\\components\\Header.js";
+var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -114,8 +114,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _static_RecipeData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../static/RecipeData */ "./static/RecipeData.js");
-var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify2\\components\\Recipes.js";
+/* harmony import */ var _data_RecipeData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../data/RecipeData */ "./data/RecipeData.js");
+var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\Recipes.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -167,7 +167,7 @@ function Recipes() {
       lineNumber: 25
     },
     __self: this
-  }, _static_RecipeData__WEBPACK_IMPORTED_MODULE_2__["default"].sortedRecipes.map(function (recipe) {
+  }, _data_RecipeData__WEBPACK_IMPORTED_MODULE_2__["default"].sortedRecipes.map(function (recipe) {
     return __jsx(Recipe, {
       recipe: recipe,
       __source: {
@@ -179,6 +179,119 @@ function Recipes() {
   }));
 }
 ;
+
+/***/ }),
+
+/***/ "./data/RecipeData.js":
+/*!****************************!*\
+  !*** ./data/RecipeData.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
+
+
+var recipes = {
+  '1': {
+    title: 'BBQ Pork Mac & Cheese',
+    ingredients: [{
+      ingredient: '1',
+      measurement: 'oz',
+      amount: 10
+    }, {
+      ingredient: '2',
+      measurement: 'oz',
+      amount: 20
+    }, {
+      ingredient: '3',
+      measurement: 'oz',
+      amount: 4
+    }, {
+      ingredient: '4',
+      measurement: 'oz',
+      amount: 6
+    }, {
+      ingredient: '5',
+      measurement: 'oz',
+      amount: 6
+    }]
+  },
+  '2': {
+    title: 'Chili'
+  },
+  '3': {
+    title: 'German Potato Soup'
+  },
+  '4': {
+    title: 'Salmon with Tomato & Lemon'
+  },
+  '5': {
+    title: 'Sausage & Peppers'
+  },
+  '6': {
+    title: 'Southwestern Quesadilla'
+  }
+};
+var sortedRecipes = [];
+
+_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(recipes).forEach(function (key) {
+  recipes[key].id = key;
+  sortedRecipes.push(recipes[key]);
+});
+
+sortedRecipes.sort(function (a, b) {
+  if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;else return -1;
+});
+var RecipeData = {
+  recipes: recipes,
+  sortedRecipes: sortedRecipes
+};
+/* harmony default export */ __webpack_exports__["default"] = (RecipeData);
+
+/***/ }),
+
+/***/ "./data/ingredientData.js":
+/*!********************************!*\
+  !*** ./data/ingredientData.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
+
+
+var ingredients = {
+  '1': {
+    name: 'Pork Roast'
+  },
+  '2': {
+    name: 'Elbow Macaroni'
+  },
+  '3': {
+    name: 'Dried Jalepeno Flakes'
+  },
+  '4': {
+    name: 'BBQ Sauce'
+  },
+  '5': {
+    name: 'Cheese'
+  }
+};
+
+_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(ingredients).forEach(function (key) {
+  ingredients[key].id = key;
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (ingredients);
 
 /***/ }),
 
@@ -4700,10 +4813,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify2%5Cpages%5Cindex.js!./":
-/*!*************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify2%5Cpages%5Cindex.js ***!
-  \*************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify%5Cpages%5Cindex.js!./":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify%5Cpages%5Cindex.js ***!
+  \************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9786,7 +9899,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_BaseContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/BaseContainer */ "./components/BaseContainer.js");
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
 /* harmony import */ var _components_Recipes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Recipes */ "./components/Recipes.js");
-var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify2\\pages\\index.js";
+var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -9829,69 +9942,14 @@ function Index() {
 
 /***/ }),
 
-/***/ "./static/RecipeData.js":
-/*!******************************!*\
-  !*** ./static/RecipeData.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
-
-var recipes = {
-  '1': {
-    id: '1',
-    title: 'BBQ Pork Mac & Cheese'
-  },
-  '2': {
-    id: '2',
-    title: 'Chili'
-  },
-  '3': {
-    id: '3',
-    title: 'German Potato Soup'
-  },
-  '4': {
-    id: '4',
-    title: 'Salmon with Tomato & Lemon'
-  },
-  '5': {
-    id: '5',
-    title: 'Sausage & Peppers'
-  },
-  '6': {
-    id: '6',
-    title: 'Southwestern Quesadilla'
-  }
-};
-var sortedRecipes = [];
-
-_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(recipes).forEach(function (key) {
-  sortedRecipes.push(recipes[key]);
-});
-
-sortedRecipes.sort(function (a, b) {
-  if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;else return -1;
-});
-var RecipeData = {
-  recipes: recipes,
-  sortedRecipes: sortedRecipes
-};
-/* harmony default export */ __webpack_exports__["default"] = (RecipeData);
-
-/***/ }),
-
 /***/ 2:
-/*!*****************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify2%5Cpages%5Cindex.js ***!
-  \*****************************************************************************************************************************************/
+/*!****************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify%5Cpages%5Cindex.js ***!
+  \****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify2%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify2%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify%5Cpages%5Cindex.js!./");
 
 
 /***/ }),

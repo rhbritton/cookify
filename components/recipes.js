@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import RecipeData from '../static/RecipeData';
+import RecipeData from '../data/RecipeData';
 
 const recipeContainer = {
 	display: 'inline-block',
