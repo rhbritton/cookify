@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -111,8 +111,8 @@ var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\B
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const baseContainerStyles = {
-  position: 'relative',
-  margin: '1em'
+  margin: '1em',
+  marginTop: '2.5em'
 };
 
 const BaseContainer = props => __jsx("div", {
@@ -146,41 +146,54 @@ var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\H
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const linkStyle = {
-  marginRight: 50
+  marginRight: 50,
+  fontSize: '1.5em'
+};
+const linksStyle = {
+  paddingTop: '0.5em',
+  paddingBottom: '0.5em',
+  height: '1.5em',
+  textAlign: 'center',
+  top: 0,
+  left: 0,
+  right: 0,
+  position: 'fixed',
+  backgroundColor: 'white'
 };
 
 const Header = () => __jsx("div", {
+  style: linksStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8
+    lineNumber: 21
   },
   __self: undefined
 }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
   href: "/",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 9
+    lineNumber: 22
   },
   __self: undefined
 }, __jsx("a", {
   style: linkStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 10
+    lineNumber: 23
   },
   __self: undefined
 }, "Recipes")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
   href: "/shopping-list",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12
+    lineNumber: 25
   },
   __self: undefined
 }, __jsx("a", {
   style: linkStyle,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 13
+    lineNumber: 26
   },
   __self: undefined
 }, "Shopping List")));
@@ -198,9 +211,7 @@ const Header = () => __jsx("div", {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
-
-var ingredients = {
+var IngredientData = {
   '1': {
     name: 'Pork Roast'
   },
@@ -217,10 +228,10 @@ var ingredients = {
     name: 'Cheese'
   }
 };
-Object.keys(ingredients).forEach(function (key) {
-  ingredients[key].id = key;
+Object.keys(IngredientData).forEach(function (key) {
+  IngredientData[key].id = key;
 });
-/* harmony default export */ __webpack_exports__["default"] = (ingredients);
+/* harmony default export */ __webpack_exports__["default"] = (IngredientData);
 
 /***/ }),
 
@@ -233,9 +244,7 @@ Object.keys(ingredients).forEach(function (key) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
-
-var recipes = {
+var recipesData = {
   '1': {
     title: 'BBQ Pork Mac & Cheese',
     ingredients: [{
@@ -258,6 +267,23 @@ var recipes = {
       ingredient: '5',
       measurement: 'oz',
       amount: 6
+    }],
+    steps: [{
+      title: 'Roasting the Pork',
+      sub_steps: [{
+        title: 'Place the Pork Roast in Crock Pot (low for 8 hours or high for 3 hours)'
+      }, {
+        title: 'Shred pork during any wait times'
+      }]
+    }, {
+      title: 'Macaroni Time',
+      sub_steps: [{
+        title: 'Boil Water in Sauce Pan'
+      }, {
+        title: 'Pour BBQ Sauce into a small bowl and microwave for 45 seconds on high'
+      }, {
+        title: 'Add Macaroni to Boiling Water and let cook until Al Dente (~5 min)'
+      }]
     }]
   },
   '2': {
@@ -277,53 +303,18 @@ var recipes = {
   }
 };
 var sortedRecipes = [];
-Object.keys(recipes).forEach(function (key) {
-  recipes[key].id = key;
-  sortedRecipes.push(recipes[key]);
+Object.keys(recipesData).forEach(function (key) {
+  recipesData[key].id = key;
+  sortedRecipes.push(recipesData[key]);
 });
 sortedRecipes.sort(function (a, b) {
   if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;else return -1;
 });
 const RecipeData = {
-  recipes: recipes,
+  recipes: recipesData,
   sortedRecipes: sortedRecipes
 };
 /* harmony default export */ __webpack_exports__["default"] = (RecipeData);
-
-/***/ }),
-
-/***/ "./data/ingredientData.js":
-/*!********************************!*\
-  !*** ./data/ingredientData.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
-
-var ingredients = {
-  '1': {
-    name: 'Pork Roast'
-  },
-  '2': {
-    name: 'Elbow Macaroni'
-  },
-  '3': {
-    name: 'Dried Jalepeno Flakes'
-  },
-  '4': {
-    name: 'BBQ Sauce'
-  },
-  '5': {
-    name: 'Cheese'
-  }
-};
-Object.keys(ingredients).forEach(function (key) {
-  ingredients[key].id = key;
-});
-/* harmony default export */ __webpack_exports__["default"] = (ingredients);
 
 /***/ }),
 
@@ -2467,7 +2458,7 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Recipe; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return RecipeView; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/error */ "./node_modules/next/error.js");
@@ -2490,83 +2481,266 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const PrevStepLinkStyle = {
+  display: 'inline-block',
+  padding: '0.5em 1em',
+  marginRight: '5%',
+  marginLeft: '5%',
+  fontSize: '1.5em',
+  width: '25%'
+};
+const PrevStepLinksStyle = {
+  paddingBottom: '0.5em',
+  paddingTop: '0.5em',
+  height: '2.5em',
+  textAlign: 'center',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  position: 'fixed',
+  backgroundColor: 'white'
+};
 
-const Ingredient = props => __jsx("div", {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}, props.ingredient.amount, " ", props.ingredient.measurement, " ", props.ingredient.ingredient.name);
+var PrevStep = function (props) {
+  if (props.page) {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: `/recipe?id=${props.id}&page=${props.page}`,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }, __jsx("a", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }, "Previous"));
+  } else {
+    return __jsx("div", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    });
+  }
+};
 
-function Recipe() {
+var NextStep = function (props) {
+  if (props.recipe && props.recipe.steps && props.page <= props.recipe.steps.length + 1) {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      href: `/recipe?id=${props.id}&page=${props.page}`,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, __jsx("a", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }, "Next"));
+  } else {
+    return __jsx("div", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    });
+  }
+};
+
+var IngredientListed = function (props) {
+  if (props.ingredient && props.ingredient.ingredient) {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, props.ingredient.amount, " ", props.ingredient.measurement, " ", props.ingredient.ingredient.name);
+  } else {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    });
+  }
+};
+
+var StepsDisplay = function (props) {
+  if (props.page == 1) {
+    return __jsx("div", {
+      key: props.page,
+      className: "ingredientsContainer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }, "Ingredients:"), __jsx("div", {
+      className: "ingredients",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71
+      },
+      __self: this
+    }, props.ingredients.map((ingredient, i) => __jsx(IngredientListed, {
+      key: i,
+      ingredient: ingredient,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 73
+      },
+      __self: this
+    }))));
+  } else {
+    var step_obj = {};
+    var step = 0;
+    var title = '';
+    var sub_steps = [];
+
+    if (props.page >= 2) {
+      step = props.page - 2;
+      step_obj = props.recipe.steps[step];
+      title = step_obj.title;
+      sub_steps = step_obj.sub_steps;
+    }
+
+    return __jsx("div", {
+      key: props.page,
+      className: "stepsContainer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 93
+      },
+      __self: this
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94
+      },
+      __self: this
+    }, "Step (", title, "):"), __jsx("div", {
+      className: "step",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95
+      },
+      __self: this
+    }, sub_steps.map((sub_step, i) => __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    }, sub_step.title))));
+  }
+};
+
+function RecipeView() {
   const router = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])();
   if (!router.query.id) return __jsx(next_error__WEBPACK_IMPORTED_MODULE_1___default.a, {
     status: 404,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 109
     },
     __self: this
   });
+  var page = router.query.page;
+  if (!page) page = 1;
+  page = parseInt(page);
+  var prev_page;
+  if (page > 1) prev_page = page - 1;
   var recipe = _data_RecipeData__WEBPACK_IMPORTED_MODULE_4__["default"].recipes[router.query.id];
   var title = recipe.title;
-  var ingredients = recipe.ingredients;
-  ingredients.forEach(function (ingredient, i) {
-    ingredients[i].ingredient = _data_IngredientData__WEBPACK_IMPORTED_MODULE_5__["default"][ingredient.ingredient];
+  var ingredients = [];
+  recipe.ingredients && recipe.ingredients.forEach(function (ingredient) {
+    var ing = Object.assign({}, ingredient);
+    ing.ingredient = Object.assign({}, _data_IngredientData__WEBPACK_IMPORTED_MODULE_5__["default"][ingredient.ingredient]);
+    ingredients.push(ing);
   });
-  ingredients.sort(function (a, b) {
+  ingredients && ingredients.sort(function (a, b) {
+    if (!a.ingredient) return -1;
+    if (!b.ingredient) return 1;
     if (a.ingredient.name.toLowerCase() > b.ingredient.name.toLowerCase()) return 1;else return -1;
   });
   return __jsx(_components_BaseContainer__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 145
     },
     __self: this
   }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 146
     },
     __self: this
   }), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 148
     },
     __self: this
-  }, title), __jsx("p", {
+  }, title), __jsx(StepsDisplay, {
+    recipe: recipe,
+    ingredients: ingredients,
+    page: page,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 150
     },
     __self: this
-  }, "Ingredients:"), __jsx("div", {
+  }), __jsx("div", {
+    style: PrevStepLinksStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 152
     },
     __self: this
-  }, ingredients.map(ingredient => __jsx(Ingredient, {
-    ingredient: ingredient,
+  }, __jsx(PrevStep, {
+    id: router.query.id,
+    page: prev_page,
+    recipe: recipe,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 153
     },
     __self: this
-  }))), __jsx("button", {
+  }), __jsx(NextStep, {
+    id: router.query.id,
+    page: page + 1,
+    recipe: recipe,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 154
     },
     __self: this
-  }, "Next"));
+  })));
 }
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*******************************!*\
   !*** multi ./pages/recipe.js ***!
   \*******************************/

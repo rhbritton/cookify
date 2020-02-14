@@ -18,8 +18,8 @@ var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\B
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var baseContainerStyles = {
-  position: 'relative',
-  margin: '1em'
+  margin: '1em',
+  marginTop: '2.5em'
 };
 
 var BaseContainer = function BaseContainer(props) {
@@ -55,42 +55,55 @@ var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\H
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var linkStyle = {
-  marginRight: 50
+  marginRight: 50,
+  fontSize: '1.5em'
+};
+var linksStyle = {
+  paddingTop: '0.5em',
+  paddingBottom: '0.5em',
+  height: '1.5em',
+  textAlign: 'center',
+  top: 0,
+  left: 0,
+  right: 0,
+  position: 'fixed',
+  backgroundColor: 'white'
 };
 
 var Header = function Header() {
   return __jsx("div", {
+    style: linksStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 21
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 22
     },
     __self: this
   }, __jsx("a", {
     style: linkStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 23
     },
     __self: this
   }, "Recipes")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/shopping-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 25
     },
     __self: this
   }, __jsx("a", {
     style: linkStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 26
     },
     __self: this
   }, "Shopping List")));
@@ -111,10 +124,8 @@ var Header = function Header() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
 
-
-var ingredients = {
+var IngredientData = {
   '1': {
     name: 'Pork Roast'
   },
@@ -132,11 +143,11 @@ var ingredients = {
   }
 };
 
-_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(ingredients).forEach(function (key) {
-  ingredients[key].id = key;
+_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(IngredientData).forEach(function (key) {
+  IngredientData[key].id = key;
 });
 
-/* harmony default export */ __webpack_exports__["default"] = (ingredients);
+/* harmony default export */ __webpack_exports__["default"] = (IngredientData);
 
 /***/ }),
 
@@ -151,10 +162,8 @@ _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default(
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
 
-
-var recipes = {
+var recipesData = {
   '1': {
     title: 'BBQ Pork Mac & Cheese',
     ingredients: [{
@@ -177,6 +186,23 @@ var recipes = {
       ingredient: '5',
       measurement: 'oz',
       amount: 6
+    }],
+    steps: [{
+      title: 'Roasting the Pork',
+      sub_steps: [{
+        title: 'Place the Pork Roast in Crock Pot (low for 8 hours or high for 3 hours)'
+      }, {
+        title: 'Shred pork during any wait times'
+      }]
+    }, {
+      title: 'Macaroni Time',
+      sub_steps: [{
+        title: 'Boil Water in Sauce Pan'
+      }, {
+        title: 'Pour BBQ Sauce into a small bowl and microwave for 45 seconds on high'
+      }, {
+        title: 'Add Macaroni to Boiling Water and let cook until Al Dente (~5 min)'
+      }]
     }]
   },
   '2': {
@@ -197,59 +223,19 @@ var recipes = {
 };
 var sortedRecipes = [];
 
-_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(recipes).forEach(function (key) {
-  recipes[key].id = key;
-  sortedRecipes.push(recipes[key]);
+_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(recipesData).forEach(function (key) {
+  recipesData[key].id = key;
+  sortedRecipes.push(recipesData[key]);
 });
 
 sortedRecipes.sort(function (a, b) {
   if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;else return -1;
 });
 var RecipeData = {
-  recipes: recipes,
+  recipes: recipesData,
   sortedRecipes: sortedRecipes
 };
 /* harmony default export */ __webpack_exports__["default"] = (RecipeData);
-
-/***/ }),
-
-/***/ "./data/ingredientData.js":
-/*!********************************!*\
-  !*** ./data/ingredientData.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
-
-
-var ingredients = {
-  '1': {
-    name: 'Pork Roast'
-  },
-  '2': {
-    name: 'Elbow Macaroni'
-  },
-  '3': {
-    name: 'Dried Jalepeno Flakes'
-  },
-  '4': {
-    name: 'BBQ Sauce'
-  },
-  '5': {
-    name: 'Cheese'
-  }
-};
-
-_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(ingredients).forEach(function (key) {
-  ingredients[key].id = key;
-});
-
-/* harmony default export */ __webpack_exports__["default"] = (ingredients);
 
 /***/ }),
 
@@ -371,6 +357,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "./no
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype-of */ "./node_modules/core-js/library/fn/object/set-prototype-of.js");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "./node_modules/core-js/library/fn/parse-int.js");
 
 /***/ }),
 
@@ -1112,6 +1109,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/parse-int.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/library/fn/parse-int.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/es6.parse-int */ "./node_modules/core-js/library/modules/es6.parse-int.js");
+module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").parseInt;
 
 
 /***/ }),
@@ -3023,6 +3033,26 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/_parse-int.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_parse-int.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $parseInt = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").parseInt;
+var $trim = __webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/library/modules/_string-trim.js").trim;
+var ws = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var hex = /^[-+]?0[xX]/;
+
+module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
+  var string = $trim(String(str), 3);
+  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
+} : $parseInt;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -3340,6 +3370,60 @@ module.exports = function (TO_STRING) {
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-trim.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-trim.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var defined = __webpack_require__(/*! ./_defined */ "./node_modules/core-js/library/modules/_defined.js");
+var fails = __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js");
+var spaces = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var space = '[' + spaces + ']';
+var non = '\u200b\u0085';
+var ltrim = RegExp('^' + space + space + '*');
+var rtrim = RegExp(space + space + '*$');
+
+var exporter = function (KEY, exec, ALIAS) {
+  var exp = {};
+  var FORCE = fails(function () {
+    return !!spaces[KEY]() || non[KEY]() != non;
+  });
+  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+  if (ALIAS) exp[ALIAS] = fn;
+  $export($export.P + $export.F * FORCE, 'String', exp);
+};
+
+// 1 -> String#trimLeft
+// 2 -> String#trimRight
+// 3 -> String#trim
+var trim = exporter.trim = function (string, TYPE) {
+  string = String(defined(string));
+  if (TYPE & 1) string = string.replace(ltrim, '');
+  if (TYPE & 2) string = string.replace(rtrim, '');
+  return string;
+};
+
+module.exports = exporter;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-ws.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-ws.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
+  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -3956,6 +4040,21 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.parse-int.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.parse-int.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $parseInt = __webpack_require__(/*! ./_parse-int */ "./node_modules/core-js/library/modules/_parse-int.js");
+// 18.2.5 parseInt(string, radix)
+$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
@@ -10660,22 +10759,28 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Recipe; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/error */ "./node_modules/next/error.js");
-/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_error__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _data_RecipeData__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/RecipeData */ "./data/RecipeData.js");
-/* harmony import */ var _data_IngredientData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../data/IngredientData */ "./data/IngredientData.js");
-/* harmony import */ var _components_BaseContainer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/BaseContainer */ "./components/BaseContainer.js");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return RecipeView; });
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/next/dist/build/polyfills/object-assign.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/error */ "./node_modules/next/error.js");
+/* harmony import */ var next_error__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_error__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _data_RecipeData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../data/RecipeData */ "./data/RecipeData.js");
+/* harmony import */ var _data_IngredientData__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../data/IngredientData */ "./data/IngredientData.js");
+/* harmony import */ var _components_BaseContainer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/BaseContainer */ "./components/BaseContainer.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+
+
 var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\pages\\recipe.js";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
@@ -10683,87 +10788,271 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-var Ingredient = function Ingredient(props) {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, props.ingredient.amount, " ", props.ingredient.measurement, " ", props.ingredient.ingredient.name);
+var PrevStepLinkStyle = {
+  display: 'inline-block',
+  padding: '0.5em 1em',
+  marginRight: '5%',
+  marginLeft: '5%',
+  fontSize: '1.5em',
+  width: '25%'
+};
+var PrevStepLinksStyle = {
+  paddingBottom: '0.5em',
+  paddingTop: '0.5em',
+  height: '2.5em',
+  textAlign: 'center',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  position: 'fixed',
+  backgroundColor: 'white'
 };
 
-function Recipe() {
-  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_3__["useRouter"])();
-  if (!router.query.id) return __jsx(next_error__WEBPACK_IMPORTED_MODULE_1___default.a, {
+var PrevStep = function PrevStep(props) {
+  if (props.page) {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: "/recipe?id=".concat(props.id, "&page=").concat(props.page),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }, __jsx("a", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }, "Previous"));
+  } else {
+    return __jsx("div", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
+      },
+      __self: this
+    });
+  }
+};
+
+var NextStep = function NextStep(props) {
+  if (props.recipe && props.recipe.steps && props.page <= props.recipe.steps.length + 1) {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: "/recipe?id=".concat(props.id, "&page=").concat(props.page),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: this
+    }, __jsx("a", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }, "Next"));
+  } else {
+    return __jsx("div", {
+      style: PrevStepLinkStyle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    });
+  }
+};
+
+var IngredientListed = function IngredientListed(props) {
+  if (props.ingredient && props.ingredient.ingredient) {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, props.ingredient.amount, " ", props.ingredient.measurement, " ", props.ingredient.ingredient.name);
+  } else {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    });
+  }
+};
+
+var StepsDisplay = function StepsDisplay(props) {
+  if (props.page == 1) {
+    return __jsx("div", {
+      key: props.page,
+      className: "ingredientsContainer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
+      },
+      __self: this
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70
+      },
+      __self: this
+    }, "Ingredients:"), __jsx("div", {
+      className: "ingredients",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71
+      },
+      __self: this
+    }, props.ingredients.map(function (ingredient, i) {
+      return __jsx(IngredientListed, {
+        key: i,
+        ingredient: ingredient,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      });
+    })));
+  } else {
+    var step_obj = {};
+    var step = 0;
+    var title = '';
+    var sub_steps = [];
+
+    if (props.page >= 2) {
+      step = props.page - 2;
+      step_obj = props.recipe.steps[step];
+      title = step_obj.title;
+      sub_steps = step_obj.sub_steps;
+    }
+
+    return __jsx("div", {
+      key: props.page,
+      className: "stepsContainer",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 93
+      },
+      __self: this
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94
+      },
+      __self: this
+    }, "Step (", title, "):"), __jsx("div", {
+      className: "step",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95
+      },
+      __self: this
+    }, sub_steps.map(function (sub_step, i) {
+      return __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }, sub_step.title);
+    })));
+  }
+};
+
+function RecipeView() {
+  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_5__["useRouter"])();
+  if (!router.query.id) return __jsx(next_error__WEBPACK_IMPORTED_MODULE_3___default.a, {
     status: 404,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 109
     },
     __self: this
   });
-  var recipe = _data_RecipeData__WEBPACK_IMPORTED_MODULE_4__["default"].recipes[router.query.id];
+  var page = router.query.page;
+  if (!page) page = 1;
+  page = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_1___default()(page);
+  var prev_page;
+  if (page > 1) prev_page = page - 1;
+  var recipe = _data_RecipeData__WEBPACK_IMPORTED_MODULE_6__["default"].recipes[router.query.id];
   var title = recipe.title;
-  var ingredients = recipe.ingredients;
-  ingredients.forEach(function (ingredient, i) {
-    ingredients[i].ingredient = _data_IngredientData__WEBPACK_IMPORTED_MODULE_5__["default"][ingredient.ingredient];
+  var ingredients = [];
+  recipe.ingredients && recipe.ingredients.forEach(function (ingredient) {
+    var ing = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, ingredient);
+
+    ing.ingredient = _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, _data_IngredientData__WEBPACK_IMPORTED_MODULE_7__["default"][ingredient.ingredient]);
+    ingredients.push(ing);
   });
-  ingredients.sort(function (a, b) {
+  ingredients && ingredients.sort(function (a, b) {
+    if (!a.ingredient) return -1;
+    if (!b.ingredient) return 1;
     if (a.ingredient.name.toLowerCase() > b.ingredient.name.toLowerCase()) return 1;else return -1;
   });
-  return __jsx(_components_BaseContainer__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  return __jsx(_components_BaseContainer__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 145
     },
     __self: this
-  }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 146
     },
     __self: this
   }), __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 148
     },
     __self: this
-  }, title), __jsx("p", {
+  }, title), __jsx(StepsDisplay, {
+    recipe: recipe,
+    ingredients: ingredients,
+    page: page,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 150
     },
     __self: this
-  }, "Ingredients:"), __jsx("div", {
+  }), __jsx("div", {
+    style: PrevStepLinksStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 152
     },
     __self: this
-  }, ingredients.map(function (ingredient) {
-    return __jsx(Ingredient, {
-      ingredient: ingredient,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
-    });
-  })), __jsx("button", {
+  }, __jsx(PrevStep, {
+    id: router.query.id,
+    page: prev_page,
+    recipe: recipe,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 153
     },
     __self: this
-  }, "Next"));
+  }), __jsx(NextStep, {
+    id: router.query.id,
+    page: page + 1,
+    recipe: recipe,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154
+    },
+    __self: this
+  })));
 }
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!***********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Frecipe&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify%5Cpages%5Crecipe.js ***!
   \***********************************************************************************************************************************************/
@@ -10786,5 +11075,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=recipe.js.map

@@ -1,6 +1,4 @@
-import IngredientData from './ingredientData'
-
-var ingredients = {
+var IngredientData = {
   '1': {
     name: 'Pork Roast'
   },
@@ -18,8 +16,8 @@ var ingredients = {
   }
 }
 
-Object.keys(ingredients).forEach(function(key) {
-  ingredients[key].id = key;
+Object.keys(IngredientData).forEach(function(key) {
+  IngredientData[key].id = key;
 })
 
-export default ingredients;
+export default IngredientData;

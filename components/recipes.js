@@ -8,7 +8,7 @@ const recipeContainer = {
 	width: '32%',
 	height: '10em',
 	border: '1px solid black',
-	'border-radius': '0.25em'
+	borderRadius: '0.25em'
 }
 
 const Recipe = (props) => (
@@ -24,8 +24,8 @@ export default function Recipes() {
   return (
     <div>
     	{RecipeData.sortedRecipes.map(recipe => (
-			<Recipe recipe={recipe} />
-		))}
+  			<Recipe recipe={recipe} />
+  		))}
     </div>
   );
 };

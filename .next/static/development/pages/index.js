@@ -18,8 +18,8 @@ var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\B
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var baseContainerStyles = {
-  position: 'relative',
-  margin: '1em'
+  margin: '1em',
+  marginTop: '2.5em'
 };
 
 var BaseContainer = function BaseContainer(props) {
@@ -55,42 +55,55 @@ var _jsxFileName = "C:\\Users\\Ryan\\Documents\\projects\\cookify\\components\\H
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var linkStyle = {
-  marginRight: 50
+  marginRight: 50,
+  fontSize: '1.5em'
+};
+var linksStyle = {
+  paddingTop: '0.5em',
+  paddingBottom: '0.5em',
+  height: '1.5em',
+  textAlign: 'center',
+  top: 0,
+  left: 0,
+  right: 0,
+  position: 'fixed',
+  backgroundColor: 'white'
 };
 
 var Header = function Header() {
   return __jsx("div", {
+    style: linksStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 21
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 22
     },
     __self: this
   }, __jsx("a", {
     style: linkStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 23
     },
     __self: this
   }, "Recipes")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/shopping-list",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 25
     },
     __self: this
   }, __jsx("a", {
     style: linkStyle,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 26
     },
     __self: this
   }, "Shopping List")));
@@ -127,7 +140,7 @@ var recipeContainer = {
   width: '32%',
   height: '10em',
   border: '1px solid black',
-  'border-radius': '0.25em'
+  borderRadius: '0.25em'
 };
 
 var Recipe = function Recipe(props) {
@@ -193,10 +206,8 @@ function Recipes() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
 
-
-var recipes = {
+var recipesData = {
   '1': {
     title: 'BBQ Pork Mac & Cheese',
     ingredients: [{
@@ -219,6 +230,23 @@ var recipes = {
       ingredient: '5',
       measurement: 'oz',
       amount: 6
+    }],
+    steps: [{
+      title: 'Roasting the Pork',
+      sub_steps: [{
+        title: 'Place the Pork Roast in Crock Pot (low for 8 hours or high for 3 hours)'
+      }, {
+        title: 'Shred pork during any wait times'
+      }]
+    }, {
+      title: 'Macaroni Time',
+      sub_steps: [{
+        title: 'Boil Water in Sauce Pan'
+      }, {
+        title: 'Pour BBQ Sauce into a small bowl and microwave for 45 seconds on high'
+      }, {
+        title: 'Add Macaroni to Boiling Water and let cook until Al Dente (~5 min)'
+      }]
     }]
   },
   '2': {
@@ -239,59 +267,19 @@ var recipes = {
 };
 var sortedRecipes = [];
 
-_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(recipes).forEach(function (key) {
-  recipes[key].id = key;
-  sortedRecipes.push(recipes[key]);
+_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(recipesData).forEach(function (key) {
+  recipesData[key].id = key;
+  sortedRecipes.push(recipesData[key]);
 });
 
 sortedRecipes.sort(function (a, b) {
   if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;else return -1;
 });
 var RecipeData = {
-  recipes: recipes,
+  recipes: recipesData,
   sortedRecipes: sortedRecipes
 };
 /* harmony default export */ __webpack_exports__["default"] = (RecipeData);
-
-/***/ }),
-
-/***/ "./data/ingredientData.js":
-/*!********************************!*\
-  !*** ./data/ingredientData.js ***!
-  \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ingredientData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ingredientData */ "./data/ingredientData.js");
-
-
-var ingredients = {
-  '1': {
-    name: 'Pork Roast'
-  },
-  '2': {
-    name: 'Elbow Macaroni'
-  },
-  '3': {
-    name: 'Dried Jalepeno Flakes'
-  },
-  '4': {
-    name: 'BBQ Sauce'
-  },
-  '5': {
-    name: 'Cheese'
-  }
-};
-
-_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(ingredients).forEach(function (key) {
-  ingredients[key].id = key;
-});
-
-/* harmony default export */ __webpack_exports__["default"] = (ingredients);
 
 /***/ }),
 
@@ -9942,7 +9930,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CRyan%5CDocuments%5Cprojects%5Ccookify%5Cpages%5Cindex.js ***!
   \****************************************************************************************************************************************/
@@ -9965,5 +9953,5 @@ module.exports = dll_ef0ff7c60362f24a921f;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

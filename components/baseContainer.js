@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 const baseContainerStyles = {
-  position: 'relative',
-  margin: '1em'
+  margin: '1em',
+  marginTop: '2.5em'
 };
 
 const BaseContainer = (props) => (
